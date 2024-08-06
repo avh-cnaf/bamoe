@@ -14,6 +14,9 @@
       <typeRef>string</typeRef>
     </itemComponent>
   </itemDefinition>
+  <decision name="Chrome decision" id="_B639193A-B1B0-4211-B1F8-6D1BA662363A">
+    <variable name="Chrome decision" id="_9E3502BA-CCC4-496B-B114-74A5548A87B9" />
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_958472FA-94E7-4B31-9279-F35FEBE862D6" name="" useAlternativeInputDataShape="false">
       <di:extension>
@@ -21,6 +24,9 @@
           <kie:ComponentWidths />
         </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="_391C19F0-6A48-4278-95B3-0BAC8ACBBCD7" dmnElementRef="_B639193A-B1B0-4211-B1F8-6D1BA662363A" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="400" y="100" width="160" height="80" />
+      </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
