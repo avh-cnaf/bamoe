@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_BC1E41B7-3652-40BE-98D7-72509A00FC0C" id="_0EABC54A-17E7-4A15-B927-3F9D93D99022" name="DMN_DDA94129-CB15-4A2B-9FB0-375D3ED9C727" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_BC1E41B7-3652-40BE-98D7-72509A00FC0C" id="_0EABC54A-17E7-4A15-B927-3F9D93D99022" name="DMN_DDA94129-CB15-4A2B-9FB0-375D3ED9C727">
+  <itemDefinition id="_61B83284-398F-4E74-8728-B59894C5FBC5" name="Personne" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_E90E6227-7EC7-4E82-84AE-C6E3DF98D873" name="Nom" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_0AB3B148-621E-49F0-AE28-00CBD7C78F9C" name="Prénom" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_740A826E-F3EC-4710-B958-BBE69923DBE8" name="Date de naissance" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>date</typeRef>
+    </itemComponent>
+    <itemComponent id="_1128A754-4021-4BEE-9536-129C009F847B" name="pk" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+  </itemDefinition>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_958472FA-94E7-4B31-9279-F35FEBE862D6" name="" useAlternativeInputDataShape="false">
       <di:extension>
