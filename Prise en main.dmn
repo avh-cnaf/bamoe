@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_BC1E41B7-3652-40BE-98D7-72509A00FC0C" id="_0EABC54A-17E7-4A15-B927-3F9D93D99022" name="DMN_DDA94129-CB15-4A2B-9FB0-375D3ED9C727" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0">
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_958472FA-94E7-4B31-9279-F35FEBE862D6" name="" useAlternativeInputDataShape="false">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths />
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
