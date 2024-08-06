@@ -14,6 +14,9 @@
       <typeRef>string</typeRef>
     </itemComponent>
   </itemDefinition>
+  <decision name="FF Descision" id="_BFB02FEE-C84D-4A8A-8AA1-8286A0AC38CF">
+    <variable name="FF Descision" id="_5EA35D53-0B0C-44B4-9027-EB1C05EF8418" />
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_958472FA-94E7-4B31-9279-F35FEBE862D6" name="" useAlternativeInputDataShape="false">
       <di:extension>
@@ -21,6 +24,9 @@
           <kie:ComponentWidths />
         </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="_2180ED0E-8B70-42EC-A2E0-4FB43C690927" dmnElementRef="_BFB02FEE-C84D-4A8A-8AA1-8286A0AC38CF" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="20" y="40" width="160" height="80" />
+      </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
