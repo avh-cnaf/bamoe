@@ -6,11 +6,7 @@
   <artifactId>code-with-quarkus-full</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <properties>
-    <bamoe.techpreview.bom.artifact-id>bamoe-techpreview-bom</bamoe.techpreview.bom.artifact-id>
     <compiler-plugin.version>3.10.1</compiler-plugin.version>
-    <kogito.bom.artifact-id>bamoe-bom</kogito.bom.artifact-id>
-    <kogito.bom.group-id>com.ibm.bamoe</kogito.bom.group-id>
-    <kogito.bom.version>9.1.0-ibm-0001</kogito.bom.version>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -20,6 +16,12 @@
     <skipITs>true</skipITs>
     <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
     <version.io.quarkiverse.embedded.postgresql>0.2.2</version.io.quarkiverse.embedded.postgresql>
+
+    <kogito.bom.group-id>com.ibm.bamoe</kogito.bom.group-id>
+    <kogito.bom.artifact-id>bamoe-bom</kogito.bom.artifact-id>
+    <kogito.bom.version>9.1.0-ibm-0001</kogito.bom.version>
+
+    <bamoe.techpreview.bom.artifact-id>bamoe-techpreview-bom</bamoe.techpreview.bom.artifact-id>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -53,12 +55,12 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy-reactive</artifactId>
+      <artifactId>quarkus-junit5</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-junit5</artifactId>
-      <scope>test</scope>
+      <artifactId>quarkus-resteasy</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -72,10 +74,14 @@
       <groupId>com.ibm.bamoe</groupId>
       <artifactId>bamoe-ilmt-compliance-quarkus-pamoe</artifactId>
     </dependency>
+
+    <!-- Runtime -->
     <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-with-drools-quarkus</artifactId>
     </dependency>
+
+    <!-- Addons -->
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kie-addons-quarkus-process-svg</artifactId>
@@ -92,10 +98,14 @@
       <groupId>org.kie</groupId>
       <artifactId>kogito-addons-quarkus-jobs-management</artifactId>
     </dependency>
+
+    <!-- Data Index -->
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kogito-addons-quarkus-data-index-postgresql</artifactId>
     </dependency>
+
+    <!-- Jobs Service -->
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kogito-addons-quarkus-jobs</artifactId>
@@ -104,16 +114,21 @@
       <groupId>org.kie.kogito</groupId>
       <artifactId>jobs-service-postgresql-common</artifactId>
     </dependency>
+
+    <!-- DevUI -->
     <dependency>
       <groupId>org.jbpm</groupId>
       <artifactId>jbpm-quarkus-devui</artifactId>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
       <groupId>io.quarkiverse.embedded.postgresql</groupId>
       <artifactId>quarkus-embedded-postgresql</artifactId>
       <version>${version.io.quarkiverse.embedded.postgresql}</version>
     </dependency>
+
+    <!-- Test -->
     <dependency>
       <groupId>org.kie.kogito</groupId>
       <artifactId>kogito-scenario-simulation</artifactId>
@@ -122,19 +137,6 @@
   </dependencies>
   <build>
     <plugins>
-      <plugin>
-        <groupId>io.smallrye</groupId>
-        <artifactId>jandex-maven-plugin</artifactId>
-        <version>3.2.2</version>
-        <executions>
-          <execution>
-            <id>make-index</id>
-            <goals>
-              <goal>jandex</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>${quarkus.platform.group-id}</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
