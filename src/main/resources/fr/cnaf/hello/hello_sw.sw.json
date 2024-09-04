@@ -1,0 +1,44 @@
+{
+    "id": "hello_sw",
+    "version": "1.0",
+    "name": "Hello Service Workflow",
+    "expressionLang": "jsonpath",
+    "description": "JSON based service call workflow",
+    "start": "FaireCoucou",
+    "functions": [
+        {
+            "name": "logg",
+            "type": "custom",
+            "operation": "service:fr.cnaf.lib.Log::toConsole"
+        },
+        {
+          "name" : "Func Tagadac Persons",
+          "type" : "rest",
+          "operation" : "openapi_localhost.yaml#decisionService__distributor__Persons"
+        }
+    ],
+    "states": [
+      {
+        "name": "FaireCoucou",
+        "type": "operation",
+        "actionMode": "sequential",
+        "actions": [
+            {
+                "name": "Log ponpom",
+                "functionRef": {
+                    "refName": "logg",
+                    "arguments": "On est dans le Serverless Workflow jusqu'au ponpom Léon!!!!!"
+                }
+            }
+        ],
+        "transition": "Activer un fichier DMN"
+      },
+      {
+        "name": "Activer un fichier DMN",
+        "type": "operation",
+        "actionMode": "sequential",
+        "actions": [ { "functionRef": { "refName":"Func Tagadac Persons"}} ],
+        "end": true
+      }
+    ]
+  }

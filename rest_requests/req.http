@@ -5,13 +5,51 @@
 
 
 
-GET http://www.caf.fr HTTP/1.1
+# GET http://www.caf.fr HTTP/1.1
 
 
-POST https://example.com/comments HTTP/1.1
+# POST https://example.com/comments HTTP/1.1
+# content-type: application/json
+# {
+#     "name": "sample",
+#     "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+# }
+###############################################################################
+
+POST http://localhost:8080/hello_bpmn HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+  "data": {
+    "in": {
+      "homeland": {
+        "persons": [
+          {
+            "Id": "Cé Moué!",
+            "Name": "Bah Moué!",
+            "Age": 19
+          }
+        ],
+        "resources": [
+          {
+            "Id": "sal1",
+            "PersonId": "Cé Moué!",
+            "Type": "SALAIRE",
+            "Amount": 100
+          },
+          {
+            "Id": "ddj1",
+            "PersonId": "Cé Moué!",
+            "Type": "DETTE_DE_JEU",
+            "Amount": 100000
+          }
+        ]
+      }
+    }
+  }
 }
+###############################################################################
+
+
+POST http://localhost:8080/traffic HTTP/1.1
+content-type: application/json

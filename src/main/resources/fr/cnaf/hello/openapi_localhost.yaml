@@ -1,0 +1,712 @@
+---
+openapi: 3.0.3
+info:
+  title: kogito-on-quarkus API
+  version: 1.44.1.Final
+tags:
+- name: hello_bpmn
+- name: hello_sw
+  description: JSON based service call workflow
+paths:
+  /adult:
+    post:
+      tags:
+      - Hello DRL Unit Query Adult Endpoint
+      operationId: executeQuery
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HelloDRLUnit'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+  /adult/first:
+    post:
+      tags:
+      - Hello DRL Unit Query Adult Endpoint
+      operationId: executeQueryFirst
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HelloDRLUnit'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+  /hello_bpmn:
+    get:
+      tags:
+      - hello_bpmn
+      summary: |-
+        This process is accessible at:
+        http://localhost:8080/hello_bpmn
+      description: ""
+      operationId: getResources_hello_bpmn
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Hello_bpmnModelOutput'
+    post:
+      tags:
+      - hello_bpmn
+      summary: |-
+        This process is accessible at:
+        http://localhost:8080/hello_bpmn
+      description: ""
+      operationId: createResource_hello_bpmn
+      parameters:
+      - name: businessKey
+        in: query
+        schema:
+          default: ""
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Hello_bpmnModelInput'
+      responses:
+        "200":
+          description: OK
+  /hello_bpmn/schema:
+    get:
+      tags:
+      - hello_bpmn
+      summary: |-
+        This process is accessible at:
+        http://localhost:8080/hello_bpmn
+      description: ""
+      operationId: getResourceSchema_hello_bpmn
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+  /hello_bpmn/{id}:
+    get:
+      tags:
+      - hello_bpmn
+      summary: |-
+        This process is accessible at:
+        http://localhost:8080/hello_bpmn
+      description: ""
+      operationId: getResource_hello_bpmn
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hello_bpmnModelOutput'
+    put:
+      tags:
+      - hello_bpmn
+      summary: |-
+        This process is accessible at:
+        http://localhost:8080/hello_bpmn
+      description: ""
+      operationId: updateModel_hello_bpmn
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Hello_bpmnModelInput'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hello_bpmnModelOutput'
+    delete:
+      tags:
+      - hello_bpmn
+      summary: |-
+        This process is accessible at:
+        http://localhost:8080/hello_bpmn
+      description: ""
+      operationId: deleteResource_hello_bpmn
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hello_bpmnModelOutput'
+    patch:
+      tags:
+      - hello_bpmn
+      summary: |-
+        This process is accessible at:
+        http://localhost:8080/hello_bpmn
+      description: ""
+      operationId: updateModelPartial_hello_bpmn
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Hello_bpmnModelInput'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Hello_bpmnModelOutput'
+  /hello_bpmn/{id}/tasks:
+    get:
+      tags:
+      - hello_bpmn
+      summary: |-
+        This process is accessible at:
+        http://localhost:8080/hello_bpmn
+      description: ""
+      operationId: getTasks_hello_bpmn
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskModel'
+  /hello_dmn:
+    get:
+      tags:
+      - Hello __dmn Resource
+      operationId: dmn_get
+      responses:
+        "200":
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+    post:
+      tags:
+      - Hello __dmn Resource
+      operationId: dmn
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSet
+      responses:
+        default:
+          description: DMN output
+          content:
+            application/json:
+              schema:
+                $ref: /dmnDefinitions.json#/definitions/OutputSet
+  /hello_dmn/distributor_Persons:
+    post:
+      tags:
+      - Hello __dmn Resource
+      operationId: decisionService__distributor__Persons
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSetDSdistributor__Persons
+      responses:
+        default:
+          description: DMN output
+          content:
+            application/json:
+              schema:
+                $ref: /dmnDefinitions.json#/definitions/OutputSetDSdistributor__Persons
+  /hello_dmn/distributor_Persons/dmnresult:
+    post:
+      tags:
+      - Hello __dmn Resource
+      operationId: decisionService__distributor__Persons_dmnresult
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSetDSdistributor__Persons
+      responses:
+        "200":
+          description: OK
+  /hello_dmn/distributor_Resources:
+    post:
+      tags:
+      - Hello __dmn Resource
+      operationId: decisionService__distributor__Resources
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSetDSdistributor__Resources
+      responses:
+        default:
+          description: DMN output
+          content:
+            application/json:
+              schema:
+                $ref: /dmnDefinitions.json#/definitions/OutputSetDSdistributor__Resources
+  /hello_dmn/distributor_Resources/dmnresult:
+    post:
+      tags:
+      - Hello __dmn Resource
+      operationId: decisionService__distributor__Resources_dmnresult
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSetDSdistributor__Resources
+      responses:
+        "200":
+          description: OK
+  /hello_dmn/dmnresult:
+    post:
+      tags:
+      - Hello __dmn Resource
+      operationId: dmn_dmnresult
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSet
+      responses:
+        "200":
+          description: OK
+  /hello_sw:
+    get:
+      tags:
+      - hello_sw
+      summary: hello_sw
+      description: ""
+      operationId: getResources_hello_sw
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JsonNodeModelOutput'
+    post:
+      tags:
+      - hello_sw
+      summary: hello_sw
+      description: ""
+      operationId: createResource_hello_sw
+      parameters:
+      - name: businessKey
+        in: query
+        schema:
+          default: ""
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JsonNodeModelInput'
+      responses:
+        "200":
+          description: OK
+  /hello_sw/schema:
+    get:
+      tags:
+      - hello_sw
+      summary: hello_sw
+      description: ""
+      operationId: getResourceSchema_hello_sw
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+  /hello_sw/{id}:
+    get:
+      tags:
+      - hello_sw
+      summary: hello_sw
+      description: ""
+      operationId: getResource_hello_sw
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonNodeModelOutput'
+    put:
+      tags:
+      - hello_sw
+      summary: hello_sw
+      description: ""
+      operationId: updateModel_hello_sw
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JsonNodeModelInput'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonNodeModelOutput'
+    delete:
+      tags:
+      - hello_sw
+      summary: hello_sw
+      description: ""
+      operationId: deleteResource_hello_sw
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonNodeModelOutput'
+    patch:
+      tags:
+      - hello_sw
+      summary: hello_sw
+      description: ""
+      operationId: updateModelPartial_hello_sw
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JsonNodeModelInput'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonNodeModelOutput'
+  /hello_sw/{id}/tasks:
+    get:
+      tags:
+      - hello_sw
+      summary: hello_sw
+      description: ""
+      operationId: getTasks_hello_sw
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: user
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TaskModel'
+  /management/processes/sources:
+    get:
+      tags:
+      - Source Files Resource
+      operationId: getSourceFileByUri
+      parameters:
+      - name: uri
+        in: query
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+  /management/processes/{processId}/source:
+    get:
+      tags:
+      - Source Files Resource
+      operationId: getSourceFileByProcessId
+      parameters:
+      - name: processId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+  /management/processes/{processId}/sources:
+    get:
+      tags:
+      - Source Files Resource
+      operationId: getSourceFilesByProcessId
+      parameters:
+      - name: processId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SourceFile'
+  /messaging/topics:
+    get:
+      tags:
+      - Quarkus Topics Information Resource
+      operationId: getTopics
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    Data:
+      type: object
+      properties:
+        in:
+          $ref: '#/components/schemas/DataIn'
+        process:
+          $ref: '#/components/schemas/DataProcess'
+        out:
+          $ref: '#/components/schemas/DataOut'
+    DataIn:
+      type: object
+      properties:
+        homeland:
+          $ref: '#/components/schemas/Homeland'
+    DataOut:
+      type: object
+      properties:
+        processedBy:
+          type: array
+          items:
+            type: string
+        resultCode:
+          format: int32
+          type: integer
+        resultCodeLabel:
+          type: string
+    DataProcess:
+      type: object
+      properties:
+        stepsNames:
+          type: array
+          items:
+            type: object
+            properties:
+              cls:
+                type: object
+              func_name:
+                type: string
+              detail:
+                type: string
+        nb_pers_in:
+          format: int32
+          type: integer
+        adult_exists:
+          type: boolean
+    DataStorePerson:
+      type: object
+    HelloDRLUnit:
+      type: object
+      properties:
+        isAdultAge:
+          format: int32
+          type: integer
+        persons:
+          $ref: '#/components/schemas/DataStorePerson'
+    Hello_bpmnModelInput:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Data'
+    Hello_bpmnModelOutput:
+      type: object
+      properties:
+        id:
+          type: string
+        data_out:
+          $ref: '#/components/schemas/DataOut'
+    Homeland:
+      type: object
+      properties:
+        persons:
+          type: array
+          items:
+            $ref: '#/components/schemas/Person'
+        resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+    JsonNodeModelInput:
+      type: object
+      properties:
+        workflowdata:
+          type: object
+    JsonNodeModelOutput:
+      type: object
+      properties:
+        id:
+          type: string
+        workflowdata:
+          type: object
+    Person:
+      type: object
+      properties:
+        Id:
+          type: string
+        Name:
+          type: string
+        Age:
+          format: int32
+          type: integer
+        isAdult:
+          type: boolean
+    Resource:
+      type: object
+      properties:
+        Id:
+          type: string
+        PersonId:
+          type: string
+        Type:
+          $ref: '#/components/schemas/ResourceType'
+        Amount:
+          format: double
+          type: number
+    ResourceType:
+      enum:
+      - SALAIRE
+      - REVENU
+      - DETTE_DE_JEU
+      - REVENU_VENTE_STUPEFIANTS
+      type: string
+    SourceFile:
+      type: object
+      properties:
+        uri:
+          type: string
+    TaskModel:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        state:
+          format: int32
+          type: integer
+        phase:
+          type: string
+        phaseStatus:
+          type: string
+        parameters:
+          type: object
+        results:
+          type: object
