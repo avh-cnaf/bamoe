@@ -11,7 +11,8 @@ quay.io/bamoe/maven-repository   9.1.0-ibm-0001
 -Incompatible firefox
 -Incompatible gitlab
 -Incompatible maven ( maven veut https, bamoe repository ne l'est pas, le workaround empêche l'install de certains autres projets (kogito) en raison de "enforcers" plus stricts )
-
+-Conflits de versions sont gérés en créant automatiquement des branches aux noms incompréhensibles (x_wrty87)
+-Les propriétés contenant des sous-objets ne sont pas/peu/mal supportées sur l'outillage graphique ( impossible de créer un test sur une "personne" qui aurait des "personne.ressources[]")
 
 
 -Editeurs: pas de completion/liaison au reste du projet, chaque fichier ne connaît rien de ce qui l'entoure, aucun moyen de "voir les utilisations" ( renommer/déplacer quoique ce soit se fait dans le noir absolu )
