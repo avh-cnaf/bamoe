@@ -13,19 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.cnaf.domain.hello;
+package org.kie.kogito;
 
 import javax.enterprise.context.ApplicationScoped;
 
-import fr.cnaf.domain.hello.DataProcess.Step;
-import fr.cnaf.lib.Log;
+import org.kie.kogito.domain.Data;
+import org.kie.kogito.domain.DataIn;
+import org.kie.kogito.domain.DataOut;
+import org.kie.kogito.domain.DataProcess.Step;
+import org.kie.kogito.lib.Log;
 
 @ApplicationScoped
 public final class Process {
 
-    public static void prepare_data(Data data) {
+    public static void prepare_data(Data data, DataIn data_in, DataOut data_out) {
 
-        Log.step(data, Process.class, "prepare_data", "...tintintin.....suspens..");
+        Log.step(data, Process.class, "prepare_data", "Création de l'objet 'data' dans global");
+
+        data.in = data_in;
+        data.out = data_out;
 
         data.process.nb_pers_in = data.in.homeland.persons.size();
         data.process.adult_exists = Process.check_adult_present(data);
@@ -39,7 +45,6 @@ public final class Process {
 
     public static DataOut prepare_data_out(Data data) {
 
-        Log.toConsole(Process.class.getCanonicalName() + " prepare_data_out");
         Log.step(data, Process.class, "prepare_data_out", " Livraison!!!! Chaud devant!!!!");
 
         data.process.stepsNames.stream()

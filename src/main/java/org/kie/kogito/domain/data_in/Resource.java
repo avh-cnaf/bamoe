@@ -13,12 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.cnaf.domain.hello.data_in;
+package org.kie.kogito.domain.data_in;
 
-import java.util.List;
+public class Resource {
 
-public class Homeland {
+    public String Id;
+    public String PersonId;
+    public ResourceType Type;
+    public Double Amount;
 
-    public List<Person> persons;
-    public List<Resource> resources;
+}
+
+enum ResourceType {
+    SALAIRE,
+    REVENU,
+    DETTE_DE_JEU,
+    REVENU_VENTE_STUPEFIANTS
 }

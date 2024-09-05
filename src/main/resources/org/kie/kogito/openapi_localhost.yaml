@@ -231,11 +231,11 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/TaskModel'
-  /hello_dmn:
+  /hello_dmn_persons:
     get:
       tags:
-      - Hello __dmn Resource
-      operationId: dmn_get
+      - Hello __dmn __persons Resource
+      operationId: dmn
       responses:
         "200":
           description: OK
@@ -245,96 +245,139 @@ paths:
                 type: string
     post:
       tags:
-      - Hello __dmn Resource
+      - Hello __dmn __persons Resource
       operationId: dmn
       requestBody:
         description: DMN input
         content:
           application/json:
             schema:
-              $ref: /dmnDefinitions.json#/definitions/InputSet
+              $ref: /dmnDefinitions.json#/definitions/InputSethello__dmn__persons
       responses:
         default:
           description: DMN output
           content:
             application/json:
               schema:
-                $ref: /dmnDefinitions.json#/definitions/OutputSet
-  /hello_dmn/distributor_Persons:
+                $ref: /dmnDefinitions.json#/definitions/OutputSethello__dmn__persons
+  /hello_dmn_persons/distributor_Persons:
     post:
       tags:
-      - Hello __dmn Resource
+      - Hello __dmn __persons Resource
       operationId: decisionService__distributor__Persons
       requestBody:
         description: DMN input
         content:
           application/json:
             schema:
-              $ref: /dmnDefinitions.json#/definitions/InputSetDSdistributor__Persons
+              $ref: /dmnDefinitions.json#/definitions/InputSethello__dmn__personsDSdistributor__Persons
       responses:
         default:
           description: DMN output
           content:
             application/json:
               schema:
-                $ref: /dmnDefinitions.json#/definitions/OutputSetDSdistributor__Persons
-  /hello_dmn/distributor_Persons/dmnresult:
+                $ref: /dmnDefinitions.json#/definitions/OutputSethello__dmn__personsDSdistributor__Persons
+  /hello_dmn_persons/distributor_Persons/dmnresult:
     post:
       tags:
-      - Hello __dmn Resource
+      - Hello __dmn __persons Resource
       operationId: decisionService__distributor__Persons_dmnresult
       requestBody:
         description: DMN input
         content:
           application/json:
             schema:
-              $ref: /dmnDefinitions.json#/definitions/InputSetDSdistributor__Persons
+              $ref: /dmnDefinitions.json#/definitions/InputSethello__dmn__personsDSdistributor__Persons
       responses:
         "200":
           description: OK
-  /hello_dmn/distributor_Resources:
+  /hello_dmn_persons/dmnresult:
     post:
       tags:
-      - Hello __dmn Resource
-      operationId: decisionService__distributor__Resources
-      requestBody:
-        description: DMN input
-        content:
-          application/json:
-            schema:
-              $ref: /dmnDefinitions.json#/definitions/InputSetDSdistributor__Resources
-      responses:
-        default:
-          description: DMN output
-          content:
-            application/json:
-              schema:
-                $ref: /dmnDefinitions.json#/definitions/OutputSetDSdistributor__Resources
-  /hello_dmn/distributor_Resources/dmnresult:
-    post:
-      tags:
-      - Hello __dmn Resource
-      operationId: decisionService__distributor__Resources_dmnresult
-      requestBody:
-        description: DMN input
-        content:
-          application/json:
-            schema:
-              $ref: /dmnDefinitions.json#/definitions/InputSetDSdistributor__Resources
-      responses:
-        "200":
-          description: OK
-  /hello_dmn/dmnresult:
-    post:
-      tags:
-      - Hello __dmn Resource
+      - Hello __dmn __persons Resource
       operationId: dmn_dmnresult
       requestBody:
         description: DMN input
         content:
           application/json:
             schema:
-              $ref: /dmnDefinitions.json#/definitions/InputSet
+              $ref: /dmnDefinitions.json#/definitions/InputSethello__dmn__persons
+      responses:
+        "200":
+          description: OK
+  /hello_dmn_resources:
+    get:
+      tags:
+      - Hello __dmn __resources Resource
+      operationId: dmn
+      responses:
+        "200":
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+    post:
+      tags:
+      - Hello __dmn __resources Resource
+      operationId: dmn
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSethello__dmn__resources
+      responses:
+        default:
+          description: DMN output
+          content:
+            application/json:
+              schema:
+                $ref: /dmnDefinitions.json#/definitions/OutputSethello__dmn__resources
+  /hello_dmn_resources/distributor_Resources:
+    post:
+      tags:
+      - Hello __dmn __resources Resource
+      operationId: decisionService__distributor__Resources
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSethello__dmn__resourcesDSdistributor__Resources
+      responses:
+        default:
+          description: DMN output
+          content:
+            application/json:
+              schema:
+                $ref: /dmnDefinitions.json#/definitions/OutputSethello__dmn__resourcesDSdistributor__Resources
+  /hello_dmn_resources/distributor_Resources/dmnresult:
+    post:
+      tags:
+      - Hello __dmn __resources Resource
+      operationId: decisionService__distributor__Resources_dmnresult
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSethello__dmn__resourcesDSdistributor__Resources
+      responses:
+        "200":
+          description: OK
+  /hello_dmn_resources/dmnresult:
+    post:
+      tags:
+      - Hello __dmn __resources Resource
+      operationId: dmn_dmnresult
+      requestBody:
+        description: DMN input
+        content:
+          application/json:
+            schema:
+              $ref: /dmnDefinitions.json#/definitions/InputSethello__dmn__resources
       responses:
         "200":
           description: OK
@@ -566,15 +609,6 @@ paths:
           description: OK
 components:
   schemas:
-    Data:
-      type: object
-      properties:
-        in:
-          $ref: '#/components/schemas/DataIn'
-        process:
-          $ref: '#/components/schemas/DataProcess'
-        out:
-          $ref: '#/components/schemas/DataOut'
     DataIn:
       type: object
       properties:
@@ -592,25 +626,6 @@ components:
           type: integer
         resultCodeLabel:
           type: string
-    DataProcess:
-      type: object
-      properties:
-        stepsNames:
-          type: array
-          items:
-            type: object
-            properties:
-              cls:
-                type: object
-              func_name:
-                type: string
-              detail:
-                type: string
-        nb_pers_in:
-          format: int32
-          type: integer
-        adult_exists:
-          type: boolean
     DataStorePerson:
       type: object
     HelloDRLUnit:
@@ -624,8 +639,8 @@ components:
     Hello_bpmnModelInput:
       type: object
       properties:
-        data:
-          $ref: '#/components/schemas/Data'
+        data_in:
+          $ref: '#/components/schemas/DataIn'
     Hello_bpmnModelOutput:
       type: object
       properties:

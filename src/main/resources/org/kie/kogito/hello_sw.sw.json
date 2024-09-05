@@ -9,7 +9,7 @@
         {
             "name": "logg",
             "type": "custom",
-            "operation": "service:fr.cnaf.lib.Log::toConsole"
+            "operation": "service:org.kie.kogito.lib.Log::toConsole"
         },
         {
           "name" : "Func Tagadac Persons",

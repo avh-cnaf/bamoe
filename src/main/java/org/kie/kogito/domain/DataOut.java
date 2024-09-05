@@ -13,20 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.cnaf.domain.hello.data_in;
+package org.kie.kogito.domain;
 
-public class Resource {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    public String Id;
-    public String PersonId;
-    public ResourceType Type;
-    public Double Amount;
+public class DataOut {
 
-}
+    public List<String> processedBy = Collections.synchronizedList(new ArrayList<String>());
+    public Integer resultCode = Integer.MIN_VALUE;
+    public String resultCodeLabel = "--no label added--";
 
-enum ResourceType {
-    SALAIRE,
-    REVENU,
-    DETTE_DE_JEU,
-    REVENU_VENTE_STUPEFIANTS
 }

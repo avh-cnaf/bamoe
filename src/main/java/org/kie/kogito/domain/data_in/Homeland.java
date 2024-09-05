@@ -13,16 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.cnaf.domain.hello;
+package org.kie.kogito.domain.data_in;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class DataOut {
+public class Homeland {
 
-    public List<String> processedBy = Collections.synchronizedList(new ArrayList<String>());
-    public Integer resultCode = Integer.MIN_VALUE;
-    public String resultCodeLabel = "--no label added--";
-
+    public List<Person> persons;
+    public List<Resource> resources;
 }

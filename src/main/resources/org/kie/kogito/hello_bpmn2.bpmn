@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" xmlns:xsi="xsi" id="_5sVWAE29ED2R2-DzXLPbTA" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_ctxItem" structureRef="String"/>
+  <bpmn2:collaboration id="_8B5D68AB-F9BA-4035-B4DA-D2DA7C03458C" name="Default Collaboration">
+    <bpmn2:participant id="_B445A7F3-6EAB-42D2-BE96-DB3539545D9A" name="Pool Participant" processRef="hello_bpmn2"/>
+  </bpmn2:collaboration>
+  <bpmn2:process id="hello_bpmn2" drools:packageName="org.kie.kogito" drools:version="1.0" drools:adHoc="false" name="hello_bpmn2" processType="Public">
+    <bpmn2:documentation><![CDATA[This process is accessible at:
+http://localhost:8080/hello_bpmn]]></bpmn2:documentation>
+    <bpmn2:property id="ctx" itemSubjectRef="_ctxItem" name="ctx"/>
+    <bpmn2:sequenceFlow id="_77E06876-BA08-4EC9-A9E8-5E85A369EC8B" sourceRef="_A446177E-9FE8-45B5-91FC-A22CA86002D9" targetRef="_AC468BE2-1CF3-4152-963B-8F54FFF7D68C"/>
+    <bpmn2:sequenceFlow id="_0EA8761F-B6CC-438A-8521-74E1D9AED746" sourceRef="_91E425EE-53BC-4558-9BFB-8B4E58A0F017" targetRef="_A446177E-9FE8-45B5-91FC-A22CA86002D9">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:scriptTask id="_A446177E-9FE8-45B5-91FC-A22CA86002D9" name="Set myout" scriptFormat="http://www.java.com/java">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Set myout]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_0EA8761F-B6CC-438A-8521-74E1D9AED746</bpmn2:incoming>
+      <bpmn2:outgoing>_77E06876-BA08-4EC9-A9E8-5E85A369EC8B</bpmn2:outgoing>
+      <bpmn2:script>System.out.println("...bpmn2...");</bpmn2:script>
+    </bpmn2:scriptTask>
+    <bpmn2:endEvent id="_AC468BE2-1CF3-4152-963B-8F54FFF7D68C">
+      <bpmn2:incoming>_77E06876-BA08-4EC9-A9E8-5E85A369EC8B</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:startEvent id="_91E425EE-53BC-4558-9BFB-8B4E58A0F017" name="Start entry point">
+      <bpmn2:documentation><![CDATA[No doc passque.]]></bpmn2:documentation>
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Start entry point]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:outgoing>_0EA8761F-B6CC-438A-8521-74E1D9AED746</bpmn2:outgoing>
+    </bpmn2:startEvent>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="hello_bpmn2">
+      <bpmndi:BPMNShape id="shape__91E425EE-53BC-4558-9BFB-8B4E58A0F017" bpmnElement="_91E425EE-53BC-4558-9BFB-8B4E58A0F017">
+        <dc:Bounds height="56" width="56" x="117" y="9"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__AC468BE2-1CF3-4152-963B-8F54FFF7D68C" bpmnElement="_AC468BE2-1CF3-4152-963B-8F54FFF7D68C">
+        <dc:Bounds height="56" width="56" x="255" y="335"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__A446177E-9FE8-45B5-91FC-A22CA86002D9" bpmnElement="_A446177E-9FE8-45B5-91FC-A22CA86002D9">
+        <dc:Bounds height="102" width="154" x="352" y="81"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__91E425EE-53BC-4558-9BFB-8B4E58A0F017_to_shape__A446177E-9FE8-45B5-91FC-A22CA86002D9" bpmnElement="_0EA8761F-B6CC-438A-8521-74E1D9AED746">
+        <di:waypoint x="145" y="37"/>
+        <di:waypoint x="429" y="81"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__A446177E-9FE8-45B5-91FC-A22CA86002D9_to_shape__AC468BE2-1CF3-4152-963B-8F54FFF7D68C" bpmnElement="_77E06876-BA08-4EC9-A9E8-5E85A369EC8B">
+        <di:waypoint x="429" y="132"/>
+        <di:waypoint x="283" y="363"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters/>
+          <bpsim:ElementParameters elementRef="_91E425EE-53BC-4558-9BFB-8B4E58A0F017">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="_A446177E-9FE8-45B5-91FC-A22CA86002D9">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_5sVWAE29ED2R2-DzXLPbTA</bpmn2:source>
+    <bpmn2:target>_5sVWAE29ED2R2-DzXLPbTA</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>

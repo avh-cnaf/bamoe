@@ -13,20 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.cnaf.domain.hello;
+package org.kie.kogito.domain.data_in;
 
-import com.fasterxml.jackson.annotation.JsonSetter;
-import com.fasterxml.jackson.annotation.Nulls;
+public class Person {
 
-public class Data {
+    public String Id;
+    public String Name;
+    public Integer Age;
+    public Boolean isAdult;
 
-    @JsonSetter(nulls = Nulls.SKIP)
-    public DataIn in = new DataIn();
-
-    @JsonSetter(nulls = Nulls.SKIP)
-    public DataProcess process = new DataProcess();
-
-    @JsonSetter(nulls = Nulls.SKIP)
-    public DataOut out = new DataOut();
+    // public void isAdult( Boolean b){ this.isAdult = true; }
 
 }

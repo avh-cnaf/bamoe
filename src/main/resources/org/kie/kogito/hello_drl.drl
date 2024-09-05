@@ -13,12 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.cnaf.domain.hello;
+package org.kie.kogito;
 
-import fr.cnaf.domain.hello.data_in.Homeland;
+// L'unité à laquelle appartient cette règle
+unit HelloDRLUnit
 
-public class DataIn {
+// Les trucs qu'on utilise
+import org.kie.kogito.domain.data_in.Person;
+import org.kie.kogito.lib.Log;
 
-    public Homeland homeland;
+// Une règle
+rule "Is Adult"
+when
+    $p: /persons[Age >= isAdultAge];
+then
+    $p.isAdult = true;
+    Log.toConsole("DRL a trouvé un adulte!");
+end
 
-}
+
+// L'unité aura un endpoint "adult" auquel on répondra les personnes
+query "adult"
+    $p: /persons;
+end

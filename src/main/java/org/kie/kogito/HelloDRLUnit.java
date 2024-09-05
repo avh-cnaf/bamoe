@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.cnaf.hello;
+package org.kie.kogito;
 
 import org.drools.ruleunits.api.DataSource;
 // import org.drools.ruleunits.api.SingletonStore;
 import org.drools.ruleunits.api.DataStore;
 import org.drools.ruleunits.api.RuleUnitData;
-
-import fr.cnaf.domain.hello.data_in.Person;
+import org.kie.kogito.domain.data_in.Person;
 
 /** Une unité de règles, ç-à-d un package de règles et données */
 public class HelloDRLUnit implements RuleUnitData {

@@ -13,28 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fr.cnaf.lib;
+package org.kie.kogito.domain;
 
-import java.util.Objects;
+import org.kie.kogito.domain.data_in.Homeland;
 
-import javax.enterprise.context.ApplicationScoped;
+public class DataIn {
 
-import fr.cnaf.domain.hello.Data;
-import fr.cnaf.domain.hello.DataProcess;
+    public Homeland homeland;
 
-@ApplicationScoped
-public class Log {
-
-    public static void toConsole(Data data) {
-        System.out.println(data.toString());
-    }
-
-    public static void toConsole(String data) {
-        System.out.println(data);
-    }
-
-    public static <T> void step(Data data, Class<T> cls, String func_name, String detail) {
-
-        data.process.stepsNames.add(new DataProcess.Step<T>(cls, func_name, Objects.nonNull(detail) ? detail : null));
-    }
 }
