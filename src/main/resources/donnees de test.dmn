@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" id="_8984B95B-08EA-4195-9B58-5EC9F0A11387" name="DMN_413A8CCC-BD92-4F20-8A83-17485E3307E4">
+  <itemDefinition id="_502EEB28-508F-4149-984E-C9AE9BAFDCDF" name="Personne" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_74AA09C6-6276-42AC-BC2F-61924191E7C9" name="Ressources" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>Ressource</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_2B9FC507-8961-4505-8979-0AB5EE824073" name="Ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_D0244A29-1909-4F4C-9B30-15A24BD580C0" name="type" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_79F281EE-3A7D-41EC-988B-62E221D7EC6E" name="montant" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_8FF54EE1-8296-45CD-B2E5-45B52C2DA283" name="la périodicité" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_1FD6B7C9-5971-47FE-A430-D4A30CB49B19" name="mois de la ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_952BE753-2B27-46A7-8C79-36B7A83ADFB7" name="Barème" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_5A0158D8-62E4-46B8-A759-4DFF41A04F1B" name="code" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_88AF64C6-1E5E-4FF2-B7A3-D4D8F9EAF30E" name="valeur" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_5BEAB822-3A53-472E-9E6B-33822DD1D753" name="AVVC Entrée" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <description>Format de données attendu en entrée du moteur AVVC</description>
+    <itemComponent id="_738E7425-89D6-4C3C-9058-E7407872A52D" name="date du mois examiné" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>date</typeRef>
+    </itemComponent>
+    <itemComponent id="_FFA8C4CA-C0E4-4FA7-8A2F-CAEEACEA0356" name="le mois de la demande" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>date</typeRef>
+    </itemComponent>
+    <itemComponent id="_9E3FC9C8-1053-4613-A018-C73D3804DF32" name="nombre d enfants à charge au sens AVVC moins de 21 ans" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_C06F07EA-4AA6-436A-99F5-99046DCDCAA3" name="Barèmes" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>Barème</typeRef>
+    </itemComponent>
+    <itemComponent id="_3CEA1A37-BDA0-4CBD-96CC-CF019899C45B" name="Personne" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>Personne</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <decisionService name="service-1" id="_E08CB5DF-6395-49FE-A0A9-D34DE0576CA2">
+    <variable name="service-1" id="_44898ED7-8BA8-4528-B26D-18D8258647F6" typeRef="string" />
+    <outputDecision href="#_1488C7AE-EE09-49F2-AF71-81F7470A03EA" />
+  </decisionService>
+  <decision name="decision-1" id="_1488C7AE-EE09-49F2-AF71-81F7470A03EA">
+    <description>La  </description>
+    <variable name="decision-1" id="_715F60FF-EA14-4FFF-9A23-BD3C1F8BB06A" typeRef="string" />
+    <literalExpression id="_50A38074-6162-4F1B-80A6-0A83FA5E392A" typeRef="string" label="decision-1">
+      <text>&quot;hello decision-1 service-1&quot;</text>
+    </literalExpression>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_0002B504-759B-40EB-8F50-EE3480563DEB" name="Default DRD" useAlternativeInputDataShape="false">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_50A38074-6162-4F1B-80A6-0A83FA5E392A">
+            <kie:width>381</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="_24121DEF-FED9-4F6E-A822-C9EE92BC9360" dmnElementRef="_E08CB5DF-6395-49FE-A0A9-D34DE0576CA2" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="380" y="180" width="320" height="320" />
+        <dmndi:DMNDecisionServiceDividerLine id="_22AD2E73-E97C-4CFD-AEDE-5AC5DAD8DF7B">
+          <di:waypoint x="380" y="340" />
+          <di:waypoint x="700" y="340" />
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_CC38AEA3-7E20-4E4D-9CFC-CD4EF48B0838" dmnElementRef="_1488C7AE-EE09-49F2-AF71-81F7470A03EA" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="460" y="220" width="160" height="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
