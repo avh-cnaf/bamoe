@@ -15,7 +15,7 @@ quay.io/bamoe/maven-repository   9.1.0-ibm-0001
 
 
 -Editeurs: pas de completion/liaison au reste du projet, chaque fichier ne connaît rien de ce qui l'entoure, aucun moyen de "voir les utilisations" ( renommer/déplacer quoique ce soit se fait dans le noir absolu )
--Erreurs générées lors de mvn quarkus:dev inutilisables
+-Erreurs générées lors de "mvn quarkus:dev" inutilisables
 -Ne fonctionne pas:
 mvn quarkus:dev: error, Caused by: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type org.kie.kogito.process.Processes and qualifiers [@Default]
 (ce qui, d'après mes écueils précédents, signifierai que le pan "Process" (jbpm, les fichiers .bpmn) n'est pas installé)
