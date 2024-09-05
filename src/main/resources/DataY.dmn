@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" id="_E6131B13-1FC2-4402-8469-A8EB468F5686" name="DMN_ECA47E4C-E3B2-4BF7-BDF2-EA2D3570F2C9" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0">
-  <itemDefinition id="_8D8186A9-E129-494A-95E4-DF17244F8AA9" name="ClassDataY" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-    <itemComponent id="_200D1B9A-898B-42B3-9EB3-50AC8C7E01B0" name="data_y_id" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" />
-  </itemDefinition>
-</definitions>

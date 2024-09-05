@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_3D6A0CFC-E443-41CB-AE6E-C9810A95FC9B" id="_D86994E4-62DE-4D68-A481-39E6699FDAC4" name="DMN_6F73D0D4-7D18-4C06-B937-25648A947F20">
+  <itemDefinition id="_2B9FC507-8961-4505-8979-0AB5EE824073" name="Ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_D0244A29-1909-4F4C-9B30-15A24BD580C0" name="type" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_79F281EE-3A7D-41EC-988B-62E221D7EC6E" name="montant" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_8FF54EE1-8296-45CD-B2E5-45B52C2DA283" name="la périodicité" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_1FD6B7C9-5971-47FE-A430-D4A30CB49B19" name="mois de la ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+  </itemDefinition>
+</definitions>

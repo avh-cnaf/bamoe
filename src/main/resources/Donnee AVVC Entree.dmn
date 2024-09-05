@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" id="_8984B95B-08EA-4195-9B58-5EC9F0A11387" name="DMN_413A8CCC-BD92-4F20-8A83-17485E3307E4">
-  <itemDefinition id="_502EEB28-508F-4149-984E-C9AE9BAFDCDF" name="Personne" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-    <itemComponent id="_74AA09C6-6276-42AC-BC2F-61924191E7C9" name="Ressources" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>Ressource</typeRef>
-    </itemComponent>
-  </itemDefinition>
-  <itemDefinition id="_2B9FC507-8961-4505-8979-0AB5EE824073" name="Ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-    <itemComponent id="_D0244A29-1909-4F4C-9B30-15A24BD580C0" name="type" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>string</typeRef>
-    </itemComponent>
-    <itemComponent id="_79F281EE-3A7D-41EC-988B-62E221D7EC6E" name="montant" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>number</typeRef>
-    </itemComponent>
-    <itemComponent id="_8FF54EE1-8296-45CD-B2E5-45B52C2DA283" name="la périodicité" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>string</typeRef>
-    </itemComponent>
-    <itemComponent id="_1FD6B7C9-5971-47FE-A430-D4A30CB49B19" name="mois de la ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>string</typeRef>
-    </itemComponent>
-  </itemDefinition>
-  <itemDefinition id="_952BE753-2B27-46A7-8C79-36B7A83ADFB7" name="Barème" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-    <itemComponent id="_5A0158D8-62E4-46B8-A759-4DFF41A04F1B" name="code" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>string</typeRef>
-    </itemComponent>
-    <itemComponent id="_88AF64C6-1E5E-4FF2-B7A3-D4D8F9EAF30E" name="valeur" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>number</typeRef>
-    </itemComponent>
-  </itemDefinition>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" xmlns:included1="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" xmlns:included2="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" id="_8984B95B-08EA-4195-9B58-5EC9F0A11387" name="DMN_413A8CCC-BD92-4F20-8A83-17485E3307E4">
+  <import id="_F5DD1EBE-DFFB-4153-8791-3B1BD4BDCC16" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" locationURI="./Donnee Personne.dmn" />
+  <import id="_3F339583-7B4B-4553-9179-989334097E24" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" locationURI="./Donnee Bareme.dmn" />
   <itemDefinition id="_5BEAB822-3A53-472E-9E6B-33822DD1D753" name="AVVC Entrée" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
     <description>Format de données attendu en entrée du moteur AVVC</description>
     <itemComponent id="_738E7425-89D6-4C3C-9058-E7407872A52D" name="date du mois examiné" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">

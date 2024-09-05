@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" id="_E6131B13-1FC2-4402-8469-A8EB468F5686" name="DMN_ECA47E4C-E3B2-4BF7-BDF2-EA2D3570F2C9" xmlns:included0="https://kie.org/dmn/_3D6A0CFC-E443-41CB-AE6E-C9810A95FC9B">
+  <import id="_70E699F7-D4AE-4FCB-8A67-738D17448510" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_3D6A0CFC-E443-41CB-AE6E-C9810A95FC9B" locationURI="./Donnee Ressource.dmn" />
+  <itemDefinition id="_502EEB28-508F-4149-984E-C9AE9BAFDCDF" name="Personne" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_74AA09C6-6276-42AC-BC2F-61924191E7C9" name="Ressources" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>Ressource</typeRef>
+    </itemComponent>
+  </itemDefinition>
+</definitions>
