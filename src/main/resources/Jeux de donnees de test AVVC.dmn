@@ -13,8 +13,8 @@
     <typeRef>Fichier Donnee AVVC Entree.AVVC Entrée</typeRef>
   </itemDefinition>
   <decision name="Jeux de données AVVC Entrée" id="_06E2DA13-79B4-4E19-805D-B4E5DED73C25">
-    <variable name="Jeux de données AVVC Entrée" id="_4E9D9E2F-8A44-4A64-82A8-C5FA00DB6FE5" typeRef="Liste de données AVVC Entrée" />
-    <relation id="_377ABAD6-61DA-488D-8758-70C9C5CF111B" typeRef="Liste de données AVVC Entrée" label="Jeux de données AVVC Entrée">
+    <variable name="Jeux de données AVVC Entrée" id="_4E9D9E2F-8A44-4A64-82A8-C5FA00DB6FE5" typeRef="Any" />
+    <relation id="_377ABAD6-61DA-488D-8758-70C9C5CF111B" typeRef="Any" label="Jeux de données AVVC Entrée">
       <column id="_266EC394-76E1-40D8-A1D5-CC1E5A9FC2B4" name="date du mois examiné" typeRef="date" />
       <column id="_14F5E9E4-B8FD-4910-834A-DD944B442831" name="le mois de la demande" typeRef="date" />
       <column id="_01F203ED-62AA-4EB5-BE75-1480D97A826C" name="nombre d enfants à charge au sens AVVC moins de 21 ans" typeRef="number" />
@@ -33,7 +33,7 @@
         <literalExpression id="_433E5D7F-903C-4BC0-8DC1-BEFA73131F7C">
           <text>[]</text>
         </literalExpression>
-        <literalExpression>
+        <literalExpression id="_E65F0745-6105-4684-879B-2086F3737677">
           <text>{}</text>
         </literalExpression>
       </row>
@@ -55,23 +55,39 @@
     </relation>
   </decision>
   <decision name="Assemblage des données" id="_8976768F-3709-407E-B525-8B6CB09E3C25">
-    <variable name="Assemblage des données" id="_E4F7A14B-6FA1-49BC-B13C-AD461D3091A6" typeRef="Liste de données AVVC Entrée" />
+    <variable name="Assemblage des données" id="_E4F7A14B-6FA1-49BC-B13C-AD461D3091A6" />
     <informationRequirement id="_6E27B378-60CA-41CC-86EC-FAF482F4F807">
       <requiredDecision href="#_06E2DA13-79B4-4E19-805D-B4E5DED73C25" />
     </informationRequirement>
     <informationRequirement id="_574B3EF2-EAF0-4446-B25D-897F9C604EFB">
       <requiredDecision href="#_FFDD0324-EDE3-488E-95FC-EA83273F2793" />
     </informationRequirement>
-    <context id="_C328CB53-1287-42CC-8D1C-F6DBEC1C6B70" typeRef="Liste de données AVVC Entrée" label="Assemblage des données">
-      <contextEntry id="_221059ED-CCD0-4960-A245-509E6FD9A2CC">
-        <variable id="_124C882A-6A88-4418-8D71-7515EE5DF401" name="AVVC Entrée avec son barème" typeRef="Fichier Donnee AVVC Entree.AVVC Entrée" />
-        <literalExpression id="_2945E2B9-2691-4C55-966C-DE76B5685808" label="AVVC Entrée avec son barème" typeRef="Fichier Donnee AVVC Entree.AVVC Entrée">
-          <text>context put( Jeux de données AVVC Entrée , &quot;Barème&quot; , Jeux de Barèmes[1] )</text>
+    <context id="_E4E57E80-C99A-4AF4-91EC-0E336AC80BF6" label="Assemblage des données">
+      <contextEntry id="_38A57953-C682-4CC0-B0F0-E4C9E02F5328">
+        <variable id="_FD68BCEB-FE88-498E-8F92-A5C17485D3C1" name="nouvelle liste" typeRef="Any">
+          <description></description>
+        </variable>
+        <literalExpression id="_E1F97C85-4839-40C6-8B22-DC8207EB382F" typeRef="Any" label="nouvelle liste">
+          <text>[]</text>
         </literalExpression>
       </contextEntry>
-      <contextEntry id="_EAC30EAA-5CF9-4941-9209-82E50760FED1">
-        <literalExpression id="_DDB4670D-9EF8-4E09-BF3D-530DE6C8E937" typeRef="Liste de données AVVC Entrée" label="Assemblage des données">
-          <text>AVVC Entrée avec son barème</text>
+      <contextEntry id="_7B734431-B361-469B-AA66-F1631E5042CE">
+        <variable id="_84F5133D-135A-424F-82F5-C2D53BC76997" name="nouvel item" typeRef="Any" />
+        <literalExpression id="_194964AC-D83F-4B7B-8E3E-4DB0AAB2D8B0" typeRef="Any" label="nouvel item">
+          <text>context merge( Jeux de données AVVC Entrée, { &quot;Barèmes&quot;: Jeux de Barèmes } )</text>
+        </literalExpression>
+      </contextEntry>
+      <contextEntry id="_590B2672-B25D-4C38-A4FB-ECBA3758C318">
+        <variable id="_834384D1-EE4E-4F30-8B32-84D68476955E" name="rien" typeRef="Any">
+          <description></description>
+        </variable>
+        <literalExpression id="_8E9C4E35-D645-4EF1-8A46-B6B41DD020DE" label="Assemblage des données">
+          <text>nouvel item</text>
+        </literalExpression>
+      </contextEntry>
+      <contextEntry id="_EE0E91EA-EBA1-471B-A2B7-D071EC56106A">
+        <literalExpression id="_8E9C4E35-D645-4EF1-8A46-B6B41DD020DE" label="Assemblage des données">
+          <text></text>
         </literalExpression>
       </contextEntry>
     </context>
@@ -108,6 +124,52 @@
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_DDB4670D-9EF8-4E09-BF3D-530DE6C8E937">
             <kie:width>876</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_94919C77-0160-4F50-9F9D-17052ED6BBBF">
+            <kie:width>740</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_0458DB9E-CA07-483D-89C9-BF2A7B69CF7D">
+            <kie:width>120</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_1E7C6E66-A517-4DEB-9229-799DE1DE7700">
+            <kie:width>618</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_A5B4C67D-967F-4383-BF0B-43BB2F5605A5">
+            <kie:width>445</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_1E603510-B1FE-4885-89EF-770F33284111">
+            <kie:width>442</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_69D4D2B0-A985-48D1-ADB9-FC2A97611532">
+            <kie:width>360</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_0732E217-48F9-4A62-96A7-EF03C2DA9FEC">
+            <kie:width>190</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_DB0741FB-9044-410E-8572-8079161DDBEB">
+            <kie:width>190</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_C5D790D7-9227-4EA8-8154-7F528C6B5E77">
+            <kie:width>764</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_6D413A8C-ADAA-4712-87A8-3461384033BA">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_E4E57E80-C99A-4AF4-91EC-0E336AC80BF6">
+            <kie:width>120</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_194964AC-D83F-4B7B-8E3E-4DB0AAB2D8B0">
+            <kie:width>844</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_8E9C4E35-D645-4EF1-8A46-B6B41DD020DE">
+            <kie:width>844</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_E1F97C85-4839-40C6-8B22-DC8207EB382F">
+            <kie:width>844</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_E8D3C9A0-BFC5-4370-9DEB-CB1F59AB31E4">
+            <kie:width>190</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
