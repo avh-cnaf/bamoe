@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:included0="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" xmlns:included1="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" xmlns:included2="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_8762B9A9-D2A5-4ABD-9B4F-1A6D5B08C475" id="_E68917A8-F163-4866-9B31-9B8E2B4A7B18" name="DMN_021D936E-F7AD-466B-B966-6B47BF87BFB1">
-  <import id="_DA5AD8CB-757D-4205-8D09-2D38923BFF4F" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" locationURI="./Donnee AVVC Entree.dmn" />
-  <import id="_4FAED5C7-724F-4CA7-8F9B-02E1CD3C7E39" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" locationURI="./Donnee Bareme.dmn" />
-  <import id="_57786A19-1308-4D2D-AC81-6F9F277BC2D1" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" locationURI="./Donnee Personne.dmn" />
+  <import id="_DA5AD8CB-757D-4205-8D09-2D38923BFF4F" name="Fichier Donnee AVVC Entree" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" locationURI="./Donnee AVVC Entree.dmn" />
+  <import id="_4FAED5C7-724F-4CA7-8F9B-02E1CD3C7E39" name="Fichier Donnee Bareme" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" locationURI="./Donnee Bareme.dmn" />
+  <import id="_57786A19-1308-4D2D-AC81-6F9F277BC2D1" name="Fichier Donnee Personne" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" locationURI="./Donnee Personne.dmn" />
+  <itemDefinition id="_CC7D2FB4-20BB-4CB6-8C0A-CAC202C2FBBE" name="Liste Donnee Bareme" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <typeRef>Fichier Donnee Bareme.Barème</typeRef>
+  </itemDefinition>
+  <itemDefinition id="_093C6C41-0691-447E-A70A-76CE8650CE0A" name="Liste Donnee Personne" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <typeRef>Fichier Donnee Personne.Personne</typeRef>
+  </itemDefinition>
   <itemDefinition id="_D4D7C4B9-A7C3-482A-842C-0F8823E1DE37" name="Liste de données AVVC Entrée" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-    <typeRef>AVVC Entrée</typeRef>
+    <typeRef>Fichier Donnee AVVC Entree.AVVC Entrée</typeRef>
   </itemDefinition>
   <decision name="Jeux de données AVVC Entrée" id="_06E2DA13-79B4-4E19-805D-B4E5DED73C25">
     <variable name="Jeux de données AVVC Entrée" id="_4E9D9E2F-8A44-4A64-82A8-C5FA00DB6FE5" typeRef="Liste de données AVVC Entrée" />
@@ -12,8 +18,8 @@
       <column id="_266EC394-76E1-40D8-A1D5-CC1E5A9FC2B4" name="date du mois examiné" typeRef="date" />
       <column id="_14F5E9E4-B8FD-4910-834A-DD944B442831" name="le mois de la demande" typeRef="date" />
       <column id="_01F203ED-62AA-4EB5-BE75-1480D97A826C" name="nombre d enfants à charge au sens AVVC moins de 21 ans" typeRef="number" />
-      <column id="_852B9FA5-F215-4567-8555-1C840734E977" name="Barèmes" typeRef="Barème" />
-      <column id="_97D5E286-8586-4553-A291-58C329D18CC9" name="Personne" typeRef="Personne" />
+      <column id="_852B9FA5-F215-4567-8555-1C840734E977" name="Barèmes" typeRef="Fichier Donnee Bareme.Barème" />
+      <column id="_97D5E286-8586-4553-A291-58C329D18CC9" name="Personne" typeRef="Fichier Donnee Personne.Personne" />
       <row id="_BB04430D-A247-46A5-A195-BF31BF7497D5">
         <literalExpression id="_34C3930C-D5E2-4B35-B3C8-0FAF422AFFAB">
           <text>2023-01-01</text>
@@ -25,14 +31,17 @@
           <text>1</text>
         </literalExpression>
         <literalExpression id="_433E5D7F-903C-4BC0-8DC1-BEFA73131F7C">
-          <text></text>
+          <text>[]</text>
+        </literalExpression>
+        <literalExpression>
+          <text>{}</text>
         </literalExpression>
       </row>
     </relation>
   </decision>
   <decision name="Jeux de Barèmes" id="_FFDD0324-EDE3-488E-95FC-EA83273F2793">
-    <variable name="Jeux de Barèmes" id="_0CA3D5C1-1FD7-42EA-9DEC-ADBA513E3EA2" typeRef="Barème" />
-    <relation id="_D7C43B51-8841-46FE-9886-4DECAC0B4715" typeRef="Barème" label="Jeux de Barèmes">
+    <variable name="Jeux de Barèmes" id="_0CA3D5C1-1FD7-42EA-9DEC-ADBA513E3EA2" typeRef="Liste Donnee Bareme" />
+    <relation id="_D7C43B51-8841-46FE-9886-4DECAC0B4715" typeRef="Liste Donnee Bareme" label="Jeux de Barèmes">
       <column id="_034FC3CD-64E2-48BF-8DCA-E245E075C12D" name="code" typeRef="string" />
       <column id="_D5996F85-C724-4E6B-B0C8-9E4C39E1C4A4" name="valeur" typeRef="number" />
       <row id="_1166C344-8D8B-4B27-A999-A1985FEFBD43">
@@ -55,8 +64,8 @@
     </informationRequirement>
     <context id="_C328CB53-1287-42CC-8D1C-F6DBEC1C6B70" typeRef="Liste de données AVVC Entrée" label="Assemblage des données">
       <contextEntry id="_221059ED-CCD0-4960-A245-509E6FD9A2CC">
-        <variable id="_124C882A-6A88-4418-8D71-7515EE5DF401" name="AVVC Entrée avec son barème" typeRef="AVVC Entrée" />
-        <literalExpression id="_2945E2B9-2691-4C55-966C-DE76B5685808" label="AVVC Entrée avec son barème" typeRef="AVVC Entrée">
+        <variable id="_124C882A-6A88-4418-8D71-7515EE5DF401" name="AVVC Entrée avec son barème" typeRef="Fichier Donnee AVVC Entree.AVVC Entrée" />
+        <literalExpression id="_2945E2B9-2691-4C55-966C-DE76B5685808" label="AVVC Entrée avec son barème" typeRef="Fichier Donnee AVVC Entree.AVVC Entrée">
           <text>context put( Jeux de données AVVC Entrée , &quot;Barème&quot; , Jeux de Barèmes[1] )</text>
         </literalExpression>
       </contextEntry>

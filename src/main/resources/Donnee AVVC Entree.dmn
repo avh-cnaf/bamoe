@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" xmlns:included1="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" xmlns:included2="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" id="_8984B95B-08EA-4195-9B58-5EC9F0A11387" name="DMN_413A8CCC-BD92-4F20-8A83-17485E3307E4">
-  <import id="_F5DD1EBE-DFFB-4153-8791-3B1BD4BDCC16" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" locationURI="./Donnee Personne.dmn" />
-  <import id="_3F339583-7B4B-4553-9179-989334097E24" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" locationURI="./Donnee Bareme.dmn" />
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" xmlns:included1="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" xmlns:included2="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" id="_8984B95B-08EA-4195-9B58-5EC9F0A11387" 
+name="Fichier Donnee AVVC Entrée">
+  <import id="_F5DD1EBE-DFFB-4153-8791-3B1BD4BDCC16" name="Fichier Donnee Personne" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" locationURI="./Donnee Personne.dmn" />
+  <import id="_3F339583-7B4B-4553-9179-989334097E24" name="Fichier Donnee Barème" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" locationURI="./Donnee Bareme.dmn" />
   <itemDefinition id="_5BEAB822-3A53-472E-9E6B-33822DD1D753" name="AVVC Entrée" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
     <description>Format de données attendu en entrée du moteur AVVC</description>
     <itemComponent id="_738E7425-89D6-4C3C-9058-E7407872A52D" name="date du mois examiné" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
@@ -14,15 +15,15 @@
       <typeRef>number</typeRef>
     </itemComponent>
     <itemComponent id="_C06F07EA-4AA6-436A-99F5-99046DCDCAA3" name="Barèmes" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>Barème</typeRef>
+      <typeRef>Fichier Donnee Barème.Barème</typeRef>
     </itemComponent>
     <itemComponent id="_3CEA1A37-BDA0-4CBD-96CC-CF019899C45B" name="Personne" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
-      <typeRef>Personne</typeRef>
+      <typeRef>Fichier Donnee Personne.Personne</typeRef>
     </itemComponent>
   </itemDefinition>
-  <textAnnotation id="_C0E2B973-565F-4AFE-BBD8-7F7AB4FE52F3">
-    <text>data uniquement</text>
-  </textAnnotation>
+  <inputData name="rien" id="_C2833A7B-F218-4E1C-992C-96A439C5C128">
+    <variable name="rien" id="_24CE15B1-60F3-48EE-ADB5-18BD75630BC9" typeRef="Any" />
+  </inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_0002B504-759B-40EB-8F50-EE3480563DEB" name="Default DRD" useAlternativeInputDataShape="false">
       <di:extension>
@@ -30,8 +31,8 @@
           <kie:ComponentWidths />
         </kie:ComponentsWidthsExtension>
       </di:extension>
-      <dmndi:DMNShape id="_4369105D-EA80-4777-B03D-A05A77C9F6A7" dmnElementRef="_C0E2B973-565F-4AFE-BBD8-7F7AB4FE52F3" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="200" y="220" width="200" height="200" />
+      <dmndi:DMNShape id="_9AB4F4DC-41A0-4192-8032-DBEBD5915B92" dmnElementRef="_C2833A7B-F218-4E1C-992C-96A439C5C128" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="280" y="80" width="160" height="80" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

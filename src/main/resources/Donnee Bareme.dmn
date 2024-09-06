@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" id="_E0C7EC87-956E-4332-99AE-5CDEBD2512E5" name="DMN_71B79219-F8F3-4372-A4E4-ABEC5FB9F664">
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" id="_E0C7EC87-956E-4332-99AE-5CDEBD2512E5" 
+name="Fichier Donnee Bareme">
   <itemDefinition id="_952BE753-2B27-46A7-8C79-36B7A83ADFB7" name="Barème" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
     <itemComponent id="_5A0158D8-62E4-46B8-A759-4DFF41A04F1B" name="code" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
       <typeRef>string</typeRef>
@@ -8,4 +9,19 @@
       <typeRef>number</typeRef>
     </itemComponent>
   </itemDefinition>
+  <inputData name="rien" id="_2821143B-7BF8-4112-A588-07C3C47FC3E2">
+    <variable name="rien" id="_C40AF782-2420-41BD-B4D0-BD15597B6F3C" typeRef="Any" />
+  </inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_AE67EC2B-0E71-4E96-A034-A57EA1C04BF4" name="Default DRD" useAlternativeInputDataShape="false">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths />
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="_5725D80D-F848-4BBB-B924-A3DB72CC8C2F" dmnElementRef="_2821143B-7BF8-4112-A588-07C3C47FC3E2" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="360" y="180" width="160" height="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
 </definitions>

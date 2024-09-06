@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_3D6A0CFC-E443-41CB-AE6E-C9810A95FC9B" id="_D86994E4-62DE-4D68-A481-39E6699FDAC4" name="DMN_6F73D0D4-7D18-4C06-B937-25648A947F20">
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_3D6A0CFC-E443-41CB-AE6E-C9810A95FC9B" id="_D86994E4-62DE-4D68-A481-39E6699FDAC4" name="Fichier Donne Ressource">
   <itemDefinition id="_2B9FC507-8961-4505-8979-0AB5EE824073" name="Ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
     <itemComponent id="_D0244A29-1909-4F4C-9B30-15A24BD580C0" name="type" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
       <typeRef>string</typeRef>
@@ -14,4 +14,19 @@
       <typeRef>string</typeRef>
     </itemComponent>
   </itemDefinition>
+  <inputData name="rien" id="_2960A8B4-8AEA-47DE-B426-831D998F7557">
+    <variable name="rien" id="_62A6D155-17AB-4B80-96B2-08A2F96A224E" typeRef="Any" />
+  </inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_BEE9942D-0E67-4DB7-B455-4A9706FD963D" name="Default DRD" useAlternativeInputDataShape="false">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths />
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="_286A78D8-7420-41B3-9F8A-167DA51D75BA" dmnElementRef="_2960A8B4-8AEA-47DE-B426-831D998F7557" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="540" y="220" width="160" height="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
 </definitions>
