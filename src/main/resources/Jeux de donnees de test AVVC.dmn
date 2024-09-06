@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:included0="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_8762B9A9-D2A5-4ABD-9B4F-1A6D5B08C475" id="_E68917A8-F163-4866-9B31-9B8E2B4A7B18" name="DMN_021D936E-F7AD-466B-B966-6B47BF87BFB1" xmlns:included1="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87">
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:included0="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" xmlns:included1="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" xmlns:included2="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_8762B9A9-D2A5-4ABD-9B4F-1A6D5B08C475" id="_E68917A8-F163-4866-9B31-9B8E2B4A7B18" name="DMN_021D936E-F7AD-466B-B966-6B47BF87BFB1">
   <import id="_DA5AD8CB-757D-4205-8D09-2D38923BFF4F" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_03C7B6E4-637F-4300-8574-9A4AAB0674EA" locationURI="./Donnee AVVC Entree.dmn" />
   <import id="_4FAED5C7-724F-4CA7-8F9B-02E1CD3C7E39" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_3D0161E2-60FD-4237-964C-088EF4A68C87" locationURI="./Donnee Bareme.dmn" />
+  <import id="_57786A19-1308-4D2D-AC81-6F9F277BC2D1" name="" importType="http://www.omg.org/spec/DMN/20180521/MODEL/" namespace="https://kie.org/dmn/_E559621F-717E-48D6-BBBD-B1320CE10225" locationURI="./Donnee Personne.dmn" />
   <itemDefinition id="_D4D7C4B9-A7C3-482A-842C-0F8823E1DE37" name="Liste de données AVVC Entrée" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
     <typeRef>AVVC Entrée</typeRef>
   </itemDefinition>
@@ -17,13 +18,13 @@
         <literalExpression id="_34C3930C-D5E2-4B35-B3C8-0FAF422AFFAB">
           <text>2023-01-01</text>
         </literalExpression>
-        <literalExpression>
+        <literalExpression id="_5D65E51D-C0FE-48B3-A92B-1B88AE7E3CED">
           <text>2023-01-01</text>
         </literalExpression>
-        <literalExpression>
+        <literalExpression id="_1B169729-5AE1-4608-9A33-F23C849A1D00">
           <text>1</text>
         </literalExpression>
-        <literalExpression>
+        <literalExpression id="_433E5D7F-903C-4BC0-8DC1-BEFA73131F7C">
           <text></text>
         </literalExpression>
       </row>
@@ -38,7 +39,7 @@
         <literalExpression id="_47BCD3F9-7BD8-41BD-B7A0-6D2D9A04EF8D">
           <text>&quot;B290&quot;</text>
         </literalExpression>
-        <literalExpression>
+        <literalExpression id="_B677B6A6-2B66-42CA-87D4-0353F81FDE1D">
           <text>250</text>
         </literalExpression>
       </row>
@@ -54,12 +55,16 @@
     </informationRequirement>
     <context id="_C328CB53-1287-42CC-8D1C-F6DBEC1C6B70" typeRef="Liste de données AVVC Entrée" label="Assemblage des données">
       <contextEntry id="_221059ED-CCD0-4960-A245-509E6FD9A2CC">
-        <variable id="_124C882A-6A88-4418-8D71-7515EE5DF401" name="assemblage de la donnée AVVC avec le barème" typeRef="AVVC Entrée" />
-        <literalExpression id="_2945E2B9-2691-4C55-966C-DE76B5685808" typeRef="AVVC Entrée" label="assemblage de la donnée AVVC avec le barème">
-          <text>Jeux de données AVVC Entrée.Barème = Jeux de Barèmes[1]</text>
+        <variable id="_124C882A-6A88-4418-8D71-7515EE5DF401" name="AVVC Entrée avec son barème" typeRef="AVVC Entrée" />
+        <literalExpression id="_2945E2B9-2691-4C55-966C-DE76B5685808" label="AVVC Entrée avec son barème" typeRef="AVVC Entrée">
+          <text>context put( Jeux de données AVVC Entrée , &quot;Barème&quot; , Jeux de Barèmes[1] )</text>
         </literalExpression>
       </contextEntry>
-      <contextEntry id="_EAC30EAA-5CF9-4941-9209-82E50760FED1" />
+      <contextEntry id="_EAC30EAA-5CF9-4941-9209-82E50760FED1">
+        <literalExpression id="_DDB4670D-9EF8-4E09-BF3D-530DE6C8E937" typeRef="Liste de données AVVC Entrée" label="Assemblage des données">
+          <text>AVVC Entrée avec son barème</text>
+        </literalExpression>
+      </contextEntry>
     </context>
   </decision>
   <dmndi:DMNDI>
@@ -90,7 +95,10 @@
             <kie:width>431</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_2945E2B9-2691-4C55-966C-DE76B5685808">
-            <kie:width>579</kie:width>
+            <kie:width>876</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_DDB4670D-9EF8-4E09-BF3D-530DE6C8E937">
+            <kie:width>876</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>

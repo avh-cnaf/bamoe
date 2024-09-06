@@ -20,12 +20,19 @@
       <typeRef>Personne</typeRef>
     </itemComponent>
   </itemDefinition>
+  <textAnnotation id="_C0E2B973-565F-4AFE-BBD8-7F7AB4FE52F3">
+    <text>data uniquement</text>
+  </textAnnotation>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_0002B504-759B-40EB-8F50-EE3480563DEB" name="Default DRD" useAlternativeInputDataShape="false">
       <di:extension>
         <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths />
         </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="_4369105D-EA80-4777-B03D-A05A77C9F6A7" dmnElementRef="_C0E2B973-565F-4AFE-BBD8-7F7AB4FE52F3" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="200" y="220" width="200" height="200" />
+      </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
