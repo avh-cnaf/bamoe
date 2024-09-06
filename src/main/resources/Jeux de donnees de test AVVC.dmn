@@ -85,11 +85,6 @@
           <text>nouvel item</text>
         </literalExpression>
       </contextEntry>
-      <contextEntry id="_EE0E91EA-EBA1-471B-A2B7-D071EC56106A">
-        <literalExpression id="_8E9C4E35-D645-4EF1-8A46-B6B41DD020DE" label="Assemblage des données">
-          <text></text>
-        </literalExpression>
-      </contextEntry>
     </context>
   </decision>
   <dmndi:DMNDI>
