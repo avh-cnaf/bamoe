@@ -55,14 +55,14 @@
     </relation>
   </decision>
   <decision name="Assemblage des données" id="_8976768F-3709-407E-B525-8B6CB09E3C25">
-    <variable name="Assemblage des données" id="_E4F7A14B-6FA1-49BC-B13C-AD461D3091A6" />
+    <variable name="Assemblage des données" id="_E4F7A14B-6FA1-49BC-B13C-AD461D3091A6" typeRef="Any" />
     <informationRequirement id="_6E27B378-60CA-41CC-86EC-FAF482F4F807">
       <requiredDecision href="#_06E2DA13-79B4-4E19-805D-B4E5DED73C25" />
     </informationRequirement>
     <informationRequirement id="_574B3EF2-EAF0-4446-B25D-897F9C604EFB">
       <requiredDecision href="#_FFDD0324-EDE3-488E-95FC-EA83273F2793" />
     </informationRequirement>
-    <context id="_E4E57E80-C99A-4AF4-91EC-0E336AC80BF6" label="Assemblage des données">
+    <context id="_E4E57E80-C99A-4AF4-91EC-0E336AC80BF6" label="Assemblage des données" typeRef="Any">
       <contextEntry id="_38A57953-C682-4CC0-B0F0-E4C9E02F5328">
         <variable id="_FD68BCEB-FE88-498E-8F92-A5C17485D3C1" name="nouvelle liste" typeRef="Any">
           <description></description>
@@ -71,18 +71,31 @@
           <text>[]</text>
         </literalExpression>
       </contextEntry>
-      <contextEntry id="_7B734431-B361-469B-AA66-F1631E5042CE">
-        <variable id="_84F5133D-135A-424F-82F5-C2D53BC76997" name="nouvel item" typeRef="Any" />
-        <literalExpression id="_194964AC-D83F-4B7B-8E3E-4DB0AAB2D8B0" typeRef="Any" label="nouvel item">
-          <text>context merge( Jeux de données AVVC Entrée, { &quot;Barèmes&quot;: Jeux de Barèmes } )</text>
-        </literalExpression>
-      </contextEntry>
       <contextEntry id="_590B2672-B25D-4C38-A4FB-ECBA3758C318">
-        <variable id="_834384D1-EE4E-4F30-8B32-84D68476955E" name="rien" typeRef="Any">
+        <variable id="_834384D1-EE4E-4F30-8B32-84D68476955E" name="listn" typeRef="Any">
           <description></description>
         </variable>
-        <literalExpression id="_8E9C4E35-D645-4EF1-8A46-B6B41DD020DE" label="Assemblage des données">
-          <text>nouvel item</text>
+        <for id="_554157E3-050A-48CE-9C7A-B464ABDD1B0B" label="listn" iteratorVariable="item">
+          <in>
+            <literalExpression id="_80226C5D-9B9A-42CE-88B4-BAB87E88DBD2" label="Expression Name">
+              <text>Jeux de données AVVC Entrée</text>
+            </literalExpression>
+          </in>
+          <return>
+            <literalExpression id="_0C492716-B71C-49AE-B0AF-14A112BC2D53" label="Expression Name">
+              <text>append(nouvelle liste, context merge( Jeux de données AVVC Entrée, { &quot;Barèmes&quot;: Jeux de Barèmes } ))</text>
+            </literalExpression>
+          </return>
+        </for>
+      </contextEntry>
+      <contextEntry>
+        <literalExpression id="_7290FD56-796C-49AE-8EE2-0A0D62BFAEBB" label="Assemblage des données">
+          <text>listn</text>
+        </literalExpression>
+      </contextEntry>
+      <contextEntry>
+        <literalExpression id="_7290FD56-796C-49AE-8EE2-0A0D62BFAEBB" label="Assemblage des données">
+          <text> context merge( Jeux de données AVVC Entrée, { &quot;Barèmes&quot;: Jeux de Barèmes } )</text>
         </literalExpression>
       </contextEntry>
     </context>
@@ -155,16 +168,32 @@
             <kie:width>120</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_194964AC-D83F-4B7B-8E3E-4DB0AAB2D8B0">
-            <kie:width>844</kie:width>
+            <kie:width>1023</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_8E9C4E35-D645-4EF1-8A46-B6B41DD020DE">
             <kie:width>844</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_E1F97C85-4839-40C6-8B22-DC8207EB382F">
-            <kie:width>844</kie:width>
+            <kie:width>1023</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_E8D3C9A0-BFC5-4370-9DEB-CB1F59AB31E4">
             <kie:width>190</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_80226C5D-9B9A-42CE-88B4-BAB87E88DBD2">
+            <kie:width>941</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_6003BF12-2825-4392-817E-5ABD326AC711">
+            <kie:width>190</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_7290FD56-796C-49AE-8EE2-0A0D62BFAEBB">
+            <kie:width>1023</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_7CFE94D3-E6B9-4213-A1ED-3D2F83ADF4FA">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_0C492716-B71C-49AE-B0AF-14A112BC2D53">
+            <kie:width>941</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>

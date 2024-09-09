@@ -1,4 +1,11 @@
 
+
+https://github.com/avh-cnaf/bamoe.git
+
+
+
+
+
 Utilisation d'IBM BAMOE ( business automation manager open edition )
 
 Images utilisées:
