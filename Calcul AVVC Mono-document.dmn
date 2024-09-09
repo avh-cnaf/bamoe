@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_D6D4C0B6-C418-463B-9135-CC6893022362" id="_797F748B-56AA-481B-A3E8-99078323F6B5" name="DMN_6FEF4CC8-0E4C-4A15-AEAD-FE8D58AB771C">
+  <itemDefinition id="_BC44B7F3-AF49-407C-9FC3-BEBD95235DC3" name="T_Type aide" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <typeRef>string</typeRef>
+    <typeConstraint id="_AF08D48F-1106-46C0-8907-A23BD82E4ED7" kie:constraintType="enumeration">
+      <text>&quot;Pret&quot;, &quot;Aide&quot;</text>
+    </typeConstraint>
+  </itemDefinition>
+  <itemDefinition id="_5977B460-612A-498C-99E4-55A38D37A3F9" name="T_Barème B290" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <description>SMIC mensuel net</description>
+    <itemComponent id="_EA0C9B87-A727-423F-9949-DCB237D8E0A8" name="montant" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_2A7B3F86-A5D0-492B-BEC4-88F4DEE5AA2D" name="date d application" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>date</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_F92E87AD-803C-4594-97AF-DF319368E038" name="T_Barème B111" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <description>Taux de majoration</description>
+    <itemComponent id="_C130D405-D8EF-44DD-AF77-429BCD29E868" name="taux 1er enfant à charge" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_8AA72D79-1A94-48F5-BE25-0DED22663754" name="taux 2nd enfant à charge" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_D84C8ABF-945D-43D6-B4FA-B26162E637FF" name="taux 3ème enfant à charge" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_DE7D7697-D4FF-4434-B0D5-4A410C5797A3" name="T_Barème B221" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <description>Montant de base du RSA</description>
+    <itemComponent id="_234B38CD-361A-4345-8005-4087748D2877" name="date d application" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>date</typeRef>
+    </itemComponent>
+    <itemComponent id="_8F4A1D3E-DD1C-494C-A265-09825935930C" name="montant" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_7656EF97-8ECC-448C-AD6A-72351CD52410" name="T_Sortie AVVC" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_8CF78BF4-BAE3-40CC-B55E-D1EE64F260E7" name="type d aide" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>T_Type aide</typeRef>
+    </itemComponent>
+    <itemComponent id="_F81FBCF5-B359-4E8E-96C5-CC9104060E14" name="montant avant CRDS" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_CF066452-BB8E-4B4F-9498-FECD3ABA9471" name="montant après CRDS" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_5B54A509-8CDF-4063-A9BD-7544D4875C0F" name="montant CRDS" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_1550F4B5-0446-4BA8-99F7-0A52D36EE7C2" name="code ouverture de droit" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+      <typeConstraint id="_2FECB5DC-1838-479A-93ED-455D3600E988" kie:constraintType="enumeration">
+        <text>&quot;R&quot;</text>
+      </typeConstraint>
+    </itemComponent>
+    <itemComponent id="_1F8C37EC-0F66-4805-880D-3C04768FF1B5" name="motif ouverture de droit" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+      <typeConstraint id="_EA82040C-1D5A-4314-B3ED-0EC4B01D3B5B" kie:constraintType="enumeration">
+        <text>&quot;N/A&quot;</text>
+      </typeConstraint>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_03F11AB8-75A3-4B95-9C7F-E59D06836636" name="T_Entrée AVVC" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_2CEC8BFD-C9CF-49AC-A8EC-77764688FFA7" name="date du mois examiné" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>date</typeRef>
+    </itemComponent>
+    <itemComponent id="_9A6D3122-EAF6-4AEE-92B7-5B779DE88F8B" name="le mois de la demande" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>date</typeRef>
+    </itemComponent>
+    <itemComponent id="_C8A5C304-42FD-4F9A-B4F6-C18D275FF685" name="nombre d enfants à charge au sens AVVC moins de 21 ans" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_FA097EC4-8D77-45DF-83F2-92E74291561C" name="barèmes" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>T_Barème</typeRef>
+    </itemComponent>
+    <itemComponent id="_65463786-F684-4A9D-B19E-8D2F3055FA8E" name="personne" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>T_Personne</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_95D51C2D-5CD5-48C6-90EB-493FDC60458F" name="T_Personne" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_0860D088-E2A5-4E2C-964D-12DDB7ACAECA" name="ressources" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>T_Ressource</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_EA32F354-C7A9-47F2-963B-C89EFF6842BB" name="T_Ressources" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <typeRef>T_Ressource</typeRef>
+  </itemDefinition>
+  <itemDefinition id="_CACBCBD7-A23E-4CDA-8105-0291AEC25B8F" name="T_Ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_7CA04861-8D50-4251-8052-EAAB59191211" name="type" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+      <typeConstraint id="_2039DEA6-B976-4BEE-8ADF-CC49C81A47F5" kie:constraintType="enumeration">
+        <text>&quot;Revenu d&apos;activité salarié&quot;, &quot;Indemnité chomage&quot;, &quot;Autre indemnité journalière de la sécurité sociale&quot;</text>
+      </typeConstraint>
+    </itemComponent>
+    <itemComponent id="_1E71883D-7F41-4EBA-BDB5-8FEE03DA5745" name="montant" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_23F66C7E-C72B-48A8-8D2D-ED6EB747FA3F" name="périodicité" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_BF2A07E4-8C66-43CB-96E2-6F6B9D03CF62" name="mois de la ressource" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <itemDefinition id="_A63C7284-8184-4BB9-BC75-72D682780882" name="T_Barèmes" isCollection="true" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <typeRef>T_Barème</typeRef>
+  </itemDefinition>
+  <itemDefinition id="_152B9A49-ACE6-4D6F-B2C3-B6E038256411" name="T_Barème" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_244A7E32-FB5C-4CE8-BB03-A82F066000D0" name="code" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_7B9DEEC1-93E4-4232-94C5-3798F0518E40" name="valeur" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <inputData name="Données AVVC en entrée" id="_378A6C31-9FFE-4EFD-9051-F29240CBEC0B">
+    <variable name="Données AVVC en entrée" id="_61D2547D-917C-43FD-A0B8-1F1BB0C22728" typeRef="T_Entrée AVVC" />
+  </inputData>
+  <decision name="Données AVVC en sortie" id="_BCA5ADF0-24D9-468D-AF28-AB260FD54016">
+    <variable name="Données AVVC en sortie" id="_0071D978-5EFA-4D4B-AAEC-60DC012D9AAE" typeRef="T_Sortie AVVC" />
+    <literalExpression id="_2213F727-77A8-44BE-BE69-EF1361217831" typeRef="T_Sortie AVVC" label="Données AVVC en sortie" />
+  </decision>
+  <decision name="Forme de l aide" id="_B1C4F010-86DC-47FB-9E41-5FE20D379C10">
+    <variable name="Forme de l aide" id="_BFE53D67-9827-4034-9F37-89F3B6164EAD" typeRef="T_Type aide" />
+    <informationRequirement id="_0EC6A247-31B6-427C-9F6E-53EC408244D1">
+      <requiredInput href="#_378A6C31-9FFE-4EFD-9051-F29240CBEC0B" />
+    </informationRequirement>
+    <decisionTable id="_0792D218-76BD-4E11-81AE-1A0F31F8E960" typeRef="T_Type aide" hitPolicy="UNIQUE" label="Forme de l aide">
+      <input id="_C39A4C1D-ACCC-4A3B-A656-75E978316BD4">
+        <inputExpression id="_31558DAB-BEDE-4E4E-97EB-88CDC3F0A201" typeRef="date">
+          <text>Données AVVC en entrée.date du mois examiné</text>
+        </inputExpression>
+      </input>
+      <input id="_44CFBB7E-2342-456A-A223-ADF41AC87F21">
+        <inputExpression id="_255CCBA8-1030-4DA0-AF05-23D8E9F06C15" typeRef="date">
+          <text>Données AVVC en entrée.le mois de la demande</text>
+        </inputExpression>
+      </input>
+      <input id="_183879A1-7CCF-4214-B4A4-4793B703886B">
+        <inputExpression id="_5F0F8A81-DB92-4039-A4BE-4C336E79D0F3" typeRef="number">
+          <text>Données AVVC en entrée.nombre d enfants à charge au sens AVVC moins de 21 ans</text>
+        </inputExpression>
+      </input>
+      <input id="_245B66E1-682E-4E69-8B35-7EA1D88C52B9">
+        <inputExpression id="_483C58C5-2F06-49D6-A56D-69E57E1F28C3" typeRef="T_Barème">
+          <text>Données AVVC en entrée.barèmes</text>
+        </inputExpression>
+      </input>
+      <input id="_0F202148-156B-46F6-8B73-E54376006E66">
+        <inputExpression id="_BF8AC8F9-F951-4CAF-9A26-28BC5C7C6851" typeRef="T_Personne">
+          <text>Données AVVC en entrée.personne</text>
+        </inputExpression>
+      </input>
+      <output id="_08BD7605-20D8-442E-82FA-A9BF5704B399" name="Output-1" typeRef="T_Type aide" />
+      <annotation name="Annotations" />
+      <rule id="_8E3B2D2D-2BA8-4FE0-A0C4-2ED5B3F3DF1F">
+        <inputEntry id="_E7129EF1-A697-4196-AF0A-F39C8873DD88">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="_90C14863-622E-4149-8FE6-344C2D2CEB59">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="_3B8AE42A-3F1F-41AB-B6D7-D9A07D3E8EFC">
+          <text>0</text>
+        </inputEntry>
+        <inputEntry id="_9E178BB0-E11F-4DBB-94A6-54E3FEA4A4E6">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="_6B31000E-5425-4E3F-AD37-E847B10245C5">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="_3D7EA2D2-7F96-4D5B-A096-F09AE4984954">
+          <text></text>
+        </outputEntry>
+        <annotationEntry>
+          <text>// Your annotations here</text>
+        </annotationEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource name="Barème B221" id="_1D0528CB-3CD1-4354-AEEC-C435A9386621">
+    <description>Montant de base du RSA</description>
+  </knowledgeSource>
+  <knowledgeSource name="Barème B111" id="_7754BBFF-5AE0-4BDF-B1A9-D46773A474BA">
+  </knowledgeSource>
+  <businessKnowledgeModel name="Fonction Selection B111" id="_5BF62ECE-E3B9-4ED3-ACF2-C566CCEF965E">
+    <variable name="Fonction Selection B111" id="_5F8195EB-D52B-476D-AB5A-F889B71BDB70" typeRef="T_Barème B111" />
+    <authorityRequirement id="_5A7DCBEA-F176-4AE1-8963-644249988BF7">
+      <requiredAuthority href="#_7754BBFF-5AE0-4BDF-B1A9-D46773A474BA" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <businessKnowledgeModel name="Fonction Sélection B221" id="_E7ACCA41-0729-4D77-8DB5-EEC26B87616A">
+    <variable name="Fonction Sélection B221" id="_20773997-8BD9-4A57-9831-5E2CDC98A7F9" typeRef="T_Barème B221" />
+    <authorityRequirement id="_C81B0F64-82A3-4FD3-A1AD-8EC3351482EB">
+      <requiredAuthority href="#_1D0528CB-3CD1-4354-AEEC-C435A9386621" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <knowledgeSource name="Barème B290" id="_2E15FF17-A568-4FC1-A5F8-AF7F19883A70">
+    <description>SMIC mensuel net</description>
+    <type></type>
+  </knowledgeSource>
+  <businessKnowledgeModel name="Fonction Sélection B290" id="_B5846931-C8D7-41D9-89E8-5995745984C1">
+    <variable name="Fonction Sélection B290" id="_999102CA-CB99-4546-A295-553231BBB670" typeRef="T_Barème B290" />
+    <authorityRequirement id="_4A9DD5AB-B17C-42C3-9711-AEDBF5DAEABB">
+      <requiredAuthority href="#_2E15FF17-A568-4FC1-A5F8-AF7F19883A70" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <businessKnowledgeModel name="Taux de SMIC selon la composition familialle" id="_09E13311-E7DB-43A1-BA18-61748D9943B1">
+    <variable name="Taux de SMIC selon la composition familialle" id="_D4C148AD-1A3A-4074-B8FF-72C7996E86F9" typeRef="number" />
+  </businessKnowledgeModel>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_874966E4-8A8F-4FBC-B929-8944BDD4D227" name="Default DRD" useAlternativeInputDataShape="false">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_2213F727-77A8-44BE-BE69-EF1361217831">
+            <kie:width>571</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_EF106372-4E6D-49DE-9D33-0BB0D2F91D9C">
+            <kie:width>60</kie:width>
+            <kie:width>167</kie:width>
+            <kie:width>682</kie:width>
+            <kie:width>768</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_0792D218-76BD-4E11-81AE-1A0F31F8E960">
+            <kie:width>60</kie:width>
+            <kie:width>308</kie:width>
+            <kie:width>315</kie:width>
+            <kie:width>537</kie:width>
+            <kie:width>221</kie:width>
+            <kie:width>227</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>240</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="_7DEF529C-EE88-423B-A511-49B1675C241D" dmnElementRef="_378A6C31-9FFE-4EFD-9051-F29240CBEC0B" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="400" y="640" width="280" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_A18582BD-7457-4ECA-8AD3-3D6A18727644" dmnElementRef="_BCA5ADF0-24D9-468D-AF28-AB260FD54016" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="720" y="-40" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_04918B8C-ED53-4F04-BCEF-6B3910EE4064" dmnElementRef="_B1C4F010-86DC-47FB-9E41-5FE20D379C10" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="460" y="80" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_F278B3B7-97B0-4C0D-8D70-4CF38301E41F" dmnElementRef="_0EC6A247-31B6-427C-9F6E-53EC408244D1" sourceElement="_7DEF529C-EE88-423B-A511-49B1675C241D" targetElement="_04918B8C-ED53-4F04-BCEF-6B3910EE4064">
+        <di:waypoint x="540" y="680" />
+        <di:waypoint x="540" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_BA5BAEBF-A82A-40CF-ACF6-B9CB8CD5E51D" dmnElementRef="_1D0528CB-3CD1-4354-AEEC-C435A9386621" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="20" y="420" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_A086DA68-0C17-4239-B7CA-D6273D7C02C1" dmnElementRef="_7754BBFF-5AE0-4BDF-B1A9-D46773A474BA" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="20" y="320" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_F1090928-9F79-43AC-9246-91E27AB2E03B" dmnElementRef="_5BF62ECE-E3B9-4ED3-ACF2-C566CCEF965E" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="220" y="320" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_4586A282-CDCC-4BB2-9348-10A36EAB9207" dmnElementRef="_E7ACCA41-0729-4D77-8DB5-EEC26B87616A" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="220" y="420" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_FD9D4D9E-4937-423A-9694-9FFD49FC3EE8" dmnElementRef="_5A7DCBEA-F176-4AE1-8963-644249988BF7" sourceElement="_A086DA68-0C17-4239-B7CA-D6273D7C02C1" targetElement="_F1090928-9F79-43AC-9246-91E27AB2E03B">
+        <di:waypoint x="100" y="360" />
+        <di:waypoint x="220" y="360" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="_159433CB-7D64-487D-BFC1-3918F023F58B" dmnElementRef="_C81B0F64-82A3-4FD3-A1AD-8EC3351482EB" sourceElement="_BA5BAEBF-A82A-40CF-ACF6-B9CB8CD5E51D" targetElement="_4586A282-CDCC-4BB2-9348-10A36EAB9207">
+        <di:waypoint x="100" y="460" />
+        <di:waypoint x="220" y="460" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_56FA8579-606C-4B76-9288-DFB745CBB9D2" dmnElementRef="_2E15FF17-A568-4FC1-A5F8-AF7F19883A70" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="20" y="520" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_F0F5E013-3C97-4F65-9089-E30CBEBCECFF" dmnElementRef="_B5846931-C8D7-41D9-89E8-5995745984C1" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="220" y="520" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_FC277FC5-9AA3-45CA-819A-2B92850B5A0F" dmnElementRef="_4A9DD5AB-B17C-42C3-9711-AEDBF5DAEABB" sourceElement="_56FA8579-606C-4B76-9288-DFB745CBB9D2" targetElement="_F0F5E013-3C97-4F65-9089-E30CBEBCECFF">
+        <di:waypoint x="100" y="560" />
+        <di:waypoint x="220" y="560" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_0B40919D-D42D-4604-9148-C524FD6B6FDC" dmnElementRef="_09E13311-E7DB-43A1-BA18-61748D9943B1" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="720" y="540" width="260" height="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
