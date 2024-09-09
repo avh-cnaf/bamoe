@@ -88,11 +88,7 @@
           </return>
         </for>
       </contextEntry>
-      <contextEntry>
-        <literalExpression id="_7290FD56-796C-49AE-8EE2-0A0D62BFAEBB" label="Assemblage des données">
-          <text>listn</text>
-        </literalExpression>
-      </contextEntry>
+
       <contextEntry>
         <literalExpression id="_7290FD56-796C-49AE-8EE2-0A0D62BFAEBB" label="Assemblage des données">
           <text> context merge( Jeux de données AVVC Entrée, { &quot;Barèmes&quot;: Jeux de Barèmes } )</text>
