@@ -55,19 +55,19 @@
     </relation>
   </decision>
   <decision name="Assemblage des données" id="_8976768F-3709-407E-B525-8B6CB09E3C25">
-    <variable name="Assemblage des données" id="_E4F7A14B-6FA1-49BC-B13C-AD461D3091A6" typeRef="Any" />
-    <informationRequirement id="_6E27B378-60CA-41CC-86EC-FAF482F4F807">
-      <requiredDecision href="#_06E2DA13-79B4-4E19-805D-B4E5DED73C25" />
-    </informationRequirement>
+    <variable name="Assemblage des données" id="_E4F7A14B-6FA1-49BC-B13C-AD461D3091A6" typeRef="Liste de données AVVC Entrée" />
     <informationRequirement id="_574B3EF2-EAF0-4446-B25D-897F9C604EFB">
       <requiredDecision href="#_FFDD0324-EDE3-488E-95FC-EA83273F2793" />
     </informationRequirement>
-    <context id="_E4E57E80-C99A-4AF4-91EC-0E336AC80BF6" label="Assemblage des données" typeRef="Any">
+    <informationRequirement id="_6E27B378-60CA-41CC-86EC-FAF482F4F807">
+      <requiredDecision href="#_06E2DA13-79B4-4E19-805D-B4E5DED73C25" />
+    </informationRequirement>
+    <context id="_E4E57E80-C99A-4AF4-91EC-0E336AC80BF6" label="Assemblage des données" typeRef="Liste de données AVVC Entrée">
       <contextEntry id="_38A57953-C682-4CC0-B0F0-E4C9E02F5328">
-        <variable id="_FD68BCEB-FE88-498E-8F92-A5C17485D3C1" name="nouvelle liste" typeRef="Any">
+        <variable id="_FD68BCEB-FE88-498E-8F92-A5C17485D3C1" name="nouvelle liste" typeRef="Liste de données AVVC Entrée">
           <description></description>
         </variable>
-        <literalExpression id="_E1F97C85-4839-40C6-8B22-DC8207EB382F" typeRef="Any" label="nouvelle liste">
+        <literalExpression id="_E1F97C85-4839-40C6-8B22-DC8207EB382F" typeRef="Liste de données AVVC Entrée" label="nouvelle liste">
           <text>[]</text>
         </literalExpression>
       </contextEntry>
@@ -76,22 +76,21 @@
           <description></description>
         </variable>
         <for id="_554157E3-050A-48CE-9C7A-B464ABDD1B0B" label="listn" iteratorVariable="item">
-          <in>
+          <in id="_60FE7D88-FF72-429A-A183-F1FFE43ACBA1">
             <literalExpression id="_80226C5D-9B9A-42CE-88B4-BAB87E88DBD2" label="Expression Name">
               <text>Jeux de données AVVC Entrée</text>
             </literalExpression>
           </in>
-          <return>
+          <return id="_65F507C9-B84B-4A79-BEF3-7C0CCA1D2136">
             <literalExpression id="_0C492716-B71C-49AE-B0AF-14A112BC2D53" label="Expression Name">
-              <text>append(nouvelle liste, context merge( Jeux de données AVVC Entrée, { &quot;Barèmes&quot;: Jeux de Barèmes } ))</text>
+              <text>append( nouvelle liste, item )</text>
             </literalExpression>
           </return>
         </for>
       </contextEntry>
-
-      <contextEntry>
+      <contextEntry id="_E9005DD5-A58F-4A56-A8E0-09C9224A606E">
         <literalExpression id="_7290FD56-796C-49AE-8EE2-0A0D62BFAEBB" label="Assemblage des données">
-          <text> context merge( Jeux de données AVVC Entrée, { &quot;Barèmes&quot;: Jeux de Barèmes } )</text>
+          <text> listn</text>
         </literalExpression>
       </contextEntry>
     </context>
@@ -161,7 +160,7 @@
             <kie:width>118</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_E4E57E80-C99A-4AF4-91EC-0E336AC80BF6">
-            <kie:width>120</kie:width>
+            <kie:width>228</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_194964AC-D83F-4B7B-8E3E-4DB0AAB2D8B0">
             <kie:width>1023</kie:width>
@@ -191,24 +190,31 @@
           <kie:ComponentWidths dmnElementRef="_0C492716-B71C-49AE-B0AF-14A112BC2D53">
             <kie:width>941</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_5C744AE9-D960-4867-8CEB-E534112B3E70">
+            <kie:width>60</kie:width>
+            <kie:width>587</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_603252C7-45EA-4000-9440-AD52C5CD1DE0">
+            <kie:width>672</kie:width>
+          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="_A930D89B-9612-471C-8B50-BB3C2F9DCD06" dmnElementRef="_06E2DA13-79B4-4E19-805D-B4E5DED73C25" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="160" y="220" width="240" height="80" />
+        <dc:Bounds x="240" y="0" width="240" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="_1C6226F3-FC07-4760-86E3-DFC3E8C0075A" dmnElementRef="_FFDD0324-EDE3-488E-95FC-EA83273F2793" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="440" y="220" width="160" height="80" />
+        <dc:Bounds x="520" y="0" width="160" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="_411A8A3D-8A16-4871-8549-478708EB87A5" dmnElementRef="_8976768F-3709-407E-B525-8B6CB09E3C25" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="380" y="-20" width="220" height="80" />
+        <dc:Bounds x="400" y="240" width="220" height="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="_958D293D-7382-43EF-ADD8-1DC437C646C5" dmnElementRef="_6E27B378-60CA-41CC-86EC-FAF482F4F807" sourceElement="_A930D89B-9612-471C-8B50-BB3C2F9DCD06" targetElement="_411A8A3D-8A16-4871-8549-478708EB87A5">
-        <di:waypoint x="280" y="260" />
-        <di:waypoint x="490" y="60" />
-      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="_14EA89EC-8FBD-4CBA-91F4-5158DC0336BD" dmnElementRef="_574B3EF2-EAF0-4446-B25D-897F9C604EFB" sourceElement="_1C6226F3-FC07-4760-86E3-DFC3E8C0075A" targetElement="_411A8A3D-8A16-4871-8549-478708EB87A5">
-        <di:waypoint x="520" y="260" />
-        <di:waypoint x="490" y="60" />
+        <di:waypoint x="600" y="40" />
+        <di:waypoint x="510" y="240" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="_958D293D-7382-43EF-ADD8-1DC437C646C5" dmnElementRef="_6E27B378-60CA-41CC-86EC-FAF482F4F807" sourceElement="_A930D89B-9612-471C-8B50-BB3C2F9DCD06" targetElement="_411A8A3D-8A16-4871-8549-478708EB87A5">
+        <di:waypoint x="360" y="40" />
+        <di:waypoint x="510" y="240" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
